@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://4yrbfj5eo4eb"
+path="res://.godot/imported/vehicle-drag-racer.obj-779be0ea5f3c5107f0e95f02b38c2baf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/vehicle-drag-racer.obj-779be0ea5f3c5107f0e95f02b38c2baf.mesh"]
+
+source_file="res://kenney_toy-car-kit/Models/OBJ format/vehicle-drag-racer.obj"
+dest_files=["res://.godot/imported/vehicle-drag-racer.obj-779be0ea5f3c5107f0e95f02b38c2baf.mesh", "res://.godot/imported/vehicle-drag-racer.obj-779be0ea5f3c5107f0e95f02b38c2baf.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
