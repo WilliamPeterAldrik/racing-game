@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://wmuvs04sfiug"
+path="res://.godot/imported/track-road-narrow-corner-large.obj-8ed2b0cff184e0cca8c78c40e41f13c3.mesh"
+
+[deps]
+
+files=["res://.godot/imported/track-road-narrow-corner-large.obj-8ed2b0cff184e0cca8c78c40e41f13c3.mesh"]
+
+source_file="res://asset/kenney_toy-car-kit/Models/OBJ format/track-road-narrow-corner-large.obj"
+dest_files=["res://.godot/imported/track-road-narrow-corner-large.obj-8ed2b0cff184e0cca8c78c40e41f13c3.mesh", "res://.godot/imported/track-road-narrow-corner-large.obj-8ed2b0cff184e0cca8c78c40e41f13c3.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

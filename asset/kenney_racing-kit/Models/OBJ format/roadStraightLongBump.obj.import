@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://ba3y0eswnjwdr"
+path="res://.godot/imported/roadStraightLongBump.obj-5094d6361139f76093866235c6f66bab.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roadStraightLongBump.obj-5094d6361139f76093866235c6f66bab.mesh"]
+
+source_file="res://asset/kenney_racing-kit/Models/OBJ format/roadStraightLongBump.obj"
+dest_files=["res://.godot/imported/roadStraightLongBump.obj-5094d6361139f76093866235c6f66bab.mesh", "res://.godot/imported/roadStraightLongBump.obj-5094d6361139f76093866235c6f66bab.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

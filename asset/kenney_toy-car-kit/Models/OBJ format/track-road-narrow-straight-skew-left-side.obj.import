@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dr5j7ltytbbjo"
+path="res://.godot/imported/track-road-narrow-straight-skew-left-side.obj-f1494774ce9ee25a7a9ad1a4fb37f7a7.mesh"
+
+[deps]
+
+files=["res://.godot/imported/track-road-narrow-straight-skew-left-side.obj-f1494774ce9ee25a7a9ad1a4fb37f7a7.mesh"]
+
+source_file="res://asset/kenney_toy-car-kit/Models/OBJ format/track-road-narrow-straight-skew-left-side.obj"
+dest_files=["res://.godot/imported/track-road-narrow-straight-skew-left-side.obj-f1494774ce9ee25a7a9ad1a4fb37f7a7.mesh", "res://.godot/imported/track-road-narrow-straight-skew-left-side.obj-f1494774ce9ee25a7a9ad1a4fb37f7a7.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

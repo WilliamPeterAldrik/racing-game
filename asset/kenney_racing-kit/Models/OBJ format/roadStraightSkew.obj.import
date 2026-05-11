@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dcuvppieaf4au"
+path="res://.godot/imported/roadStraightSkew.obj-227f05c103ac2e6350b4c22c000104dd.mesh"
+
+[deps]
+
+files=["res://.godot/imported/roadStraightSkew.obj-227f05c103ac2e6350b4c22c000104dd.mesh"]
+
+source_file="res://asset/kenney_racing-kit/Models/OBJ format/roadStraightSkew.obj"
+dest_files=["res://.godot/imported/roadStraightSkew.obj-227f05c103ac2e6350b4c22c000104dd.mesh", "res://.godot/imported/roadStraightSkew.obj-227f05c103ac2e6350b4c22c000104dd.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

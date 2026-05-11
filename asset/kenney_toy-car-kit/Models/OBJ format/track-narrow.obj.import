@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://d34tk15g5xsgf"
+path="res://.godot/imported/track-narrow.obj-6a52aa0d4a6a4a40cf72dccbfb49661e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/track-narrow.obj-6a52aa0d4a6a4a40cf72dccbfb49661e.mesh"]
+
+source_file="res://asset/kenney_toy-car-kit/Models/OBJ format/track-narrow.obj"
+dest_files=["res://.godot/imported/track-narrow.obj-6a52aa0d4a6a4a40cf72dccbfb49661e.mesh", "res://.godot/imported/track-narrow.obj-6a52aa0d4a6a4a40cf72dccbfb49661e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

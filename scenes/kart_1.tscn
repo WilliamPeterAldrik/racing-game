@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://de10rhg6066ko"]
+
+[ext_resource type="PackedScene" uid="uid://bdw8ul0qd1jb2" path="res://asset/kenney_car-kit/Models/GLB format/kart-oobi.glb" id="1_x6ce0"]
+
+[node name="kart-oobi2" unique_id=2090079408 instance=ExtResource("1_x6ce0")]

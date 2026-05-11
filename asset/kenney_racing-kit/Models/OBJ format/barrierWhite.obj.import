@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://u3lkpmx6ws1u"
+path="res://.godot/imported/barrierWhite.obj-6c9ee81b585b316802df616645cf0cde.mesh"
+
+[deps]
+
+files=["res://.godot/imported/barrierWhite.obj-6c9ee81b585b316802df616645cf0cde.mesh"]
+
+source_file="res://asset/kenney_racing-kit/Models/OBJ format/barrierWhite.obj"
+dest_files=["res://.godot/imported/barrierWhite.obj-6c9ee81b585b316802df616645cf0cde.mesh", "res://.godot/imported/barrierWhite.obj-6c9ee81b585b316802df616645cf0cde.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
