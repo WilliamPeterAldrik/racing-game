@@ -1,6 +1,8 @@
 [gd_scene format=4 uid="uid://muuqi1y8h0ts"]
 
+[ext_resource type="Script" uid="uid://yxlci2a1ng8t" path="res://scripts/car.gd" id="1_nlh2e"]
 [ext_resource type="Texture2D" uid="uid://dl1gs52ybkogb" path="res://asset/kenney_car-kit/Models/GLB format/Textures/colormap.png" id="1_y07ru"]
+[ext_resource type="Script" uid="uid://crwbbob6fjq6r" path="res://scripts/camera.gd" id="3_lj1wc"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p448l"]
 resource_name = "colormap"
@@ -211,29 +213,50 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_03i68")
 
-[node name="kart-ooli2" type="VehicleBody3D" unique_id=745270654]
+[sub_resource type="BoxShape3D" id="BoxShape3D_isqbw"]
+size = Vector3(1, 1.3240967, 1.3846436)
 
-[node name="kart-ooli" type="MeshInstance3D" parent="." unique_id=917126389]
+[node name="kart_2" type="Node3D" unique_id=551762386]
+
+[node name="kart_2_body" type="VehicleBody3D" parent="." unique_id=745270654]
+script = ExtResource("1_nlh2e")
+
+[node name="kart_2_car" type="MeshInstance3D" parent="kart_2_body" unique_id=917126389]
 mesh = SubResource("ArrayMesh_s1o20")
 
-[node name="character" type="MeshInstance3D" parent="kart-ooli" unique_id=276895718]
+[node name="kart_2_character" type="MeshInstance3D" parent="kart_2_body/kart_2_car" unique_id=276895718]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.8189113e-13, 0.27657777, -0.06801588)
 mesh = SubResource("ArrayMesh_drbeg")
 
-[node name="VehicleWheel3D" type="VehicleWheel3D" parent="." unique_id=654289404]
+[node name="wheel_1" type="VehicleWheel3D" parent="kart_2_body" unique_id=654289404]
 
-[node name="wheel-back-right" type="MeshInstance3D" parent="VehicleWheel3D" unique_id=59773476]
+[node name="wheel-back-right" type="MeshInstance3D" parent="kart_2_body/wheel_1" unique_id=59773476]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27737227, 0.20977734, -0.3606073)
 mesh = SubResource("ArrayMesh_q2y87")
 
-[node name="wheel-front-left" type="MeshInstance3D" parent="VehicleWheel3D" unique_id=948827581]
+[node name="wheel_2" type="VehicleWheel3D" parent="kart_2_body" unique_id=1940069114]
+
+[node name="wheel-front-left" type="MeshInstance3D" parent="kart_2_body/wheel_2" unique_id=948827581]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27737227, 0.20977734, 0.32373303)
 mesh = SubResource("ArrayMesh_5w67a")
 
-[node name="wheel-front-right" type="MeshInstance3D" parent="VehicleWheel3D" unique_id=933408887]
+[node name="wheel_3" type="VehicleWheel3D" parent="kart_2_body" unique_id=31672483]
+
+[node name="wheel-front-right" type="MeshInstance3D" parent="kart_2_body/wheel_3" unique_id=933408887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27737227, 0.20977734, 0.32373303)
 mesh = SubResource("ArrayMesh_sxjv0")
 
-[node name="wheel-back-left" type="MeshInstance3D" parent="VehicleWheel3D" unique_id=1852930003]
+[node name="wheel_4" type="VehicleWheel3D" parent="kart_2_body" unique_id=2115245206]
+
+[node name="wheel-back-left" type="MeshInstance3D" parent="kart_2_body/wheel_4" unique_id=1852930003]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27737227, 0.20977734, -0.3606073)
 mesh = SubResource("ArrayMesh_i8sf7")
+
+[node name="kart_2_collission" type="CollisionShape3D" parent="kart_2_body" unique_id=872326207]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.65911865, 0.090026855)
+shape = SubResource("BoxShape3D_isqbw")
+
+[node name="camera_base" type="Node3D" parent="kart_2_body" unique_id=1769594314]
+
+[node name="Camera3D" type="Camera3D" parent="kart_2_body/camera_base" unique_id=336752381]
+script = ExtResource("3_lj1wc")

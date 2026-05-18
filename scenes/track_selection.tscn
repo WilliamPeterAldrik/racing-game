@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://rsmrxyspdjfn"]
+
+[node name="track_selection" type="Control" unique_id=1533825390]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2037099212]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="track_1" type="Button" parent="HBoxContainer" unique_id=1206637166]
+layout_mode = 2
+
+[node name="track_2" type="Button" parent="HBoxContainer" unique_id=1047089531]
+layout_mode = 2
+
+[node name="track_3" type="Button" parent="HBoxContainer" unique_id=1506353439]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="." unique_id=18470078]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Track Selection"

@@ -1,0 +1,35 @@
+[gd_scene format=3 uid="uid://t6k3x6jvuuun"]
+
+[ext_resource type="Texture2D" uid="uid://bnhxpkv0ndmuy" path="res://asset/kenney_car-kit/Previews/kart-oobi.png" id="1_kibkq"]
+[ext_resource type="Texture2D" uid="uid://bwlhgfbp4bud7" path="res://asset/kenney_car-kit/Previews/kart-ooli.png" id="2_6nqe6"]
+
+[node name="kart_selection" type="Control" unique_id=2096203769]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=473759908]
+layout_mode = 0
+offset_left = 28.0
+offset_top = 41.0
+offset_right = 176.0
+offset_bottom = 113.0
+
+[node name="kart_1" type="Button" parent="HBoxContainer" unique_id=891689303]
+layout_mode = 2
+icon = ExtResource("1_kibkq")
+
+[node name="kart_2" type="Button" parent="HBoxContainer" unique_id=1204259120]
+layout_mode = 2
+icon = ExtResource("2_6nqe6")
+
+[node name="Label" type="Label" parent="." unique_id=2027459694]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 8.0
+offset_right = 157.0
+offset_bottom = 31.0
+text = "Kart Selection"
