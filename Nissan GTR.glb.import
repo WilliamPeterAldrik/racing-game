@@ -3,19 +3,19 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://crplke5skkvi3"
-path="res://.godot/imported/race.glb-9645905dd47e46bdab3369af6e329e55.scn"
+uid="uid://dsrlly7wnji24"
+path="res://.godot/imported/Nissan GTR.glb-aa8583a94a97f1482f8be686c9809975.scn"
 
 [deps]
 
-source_file="res://asset/kenney_car-kit/Models/GLB format/race.glb"
-dest_files=["res://.godot/imported/race.glb-9645905dd47e46bdab3369af6e329e55.scn"]
+source_file="res://Nissan GTR.glb"
+dest_files=["res://.godot/imported/Nissan GTR.glb-aa8583a94a97f1482f8be686c9809975.scn"]
 
 [params]
 
 nodes/root_type=""
 nodes/root_name=""
-nodes/root_script=Resource("uid://yxlci2a1ng8t", "res://scripts/car.gd")
+nodes/root_script=null
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
 nodes/import_as_skeleton_bones=false
