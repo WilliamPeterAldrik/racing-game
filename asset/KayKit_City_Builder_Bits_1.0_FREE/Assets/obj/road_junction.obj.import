@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://84b3xpqhbgyo"
+path="res://.godot/imported/road_junction.obj-b2b8d2850a988493a0a07f16e5cfa196.mesh"
+
+[deps]
+
+files=["res://.godot/imported/road_junction.obj-b2b8d2850a988493a0a07f16e5cfa196.mesh"]
+
+source_file="res://asset/KayKit_City_Builder_Bits_1.0_FREE/Assets/obj/road_junction.obj"
+dest_files=["res://.godot/imported/road_junction.obj-b2b8d2850a988493a0a07f16e5cfa196.mesh", "res://.godot/imported/road_junction.obj-b2b8d2850a988493a0a07f16e5cfa196.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
