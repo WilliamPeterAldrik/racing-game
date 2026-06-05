@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://dcl3dtu1h3to6"]
+
+[ext_resource type="PackedScene" uid="uid://5s551556hwgf" path="res://asset/glb/track.glb" id="1_067j4"]
+
+[node name="track" unique_id=1251329857 instance=ExtResource("1_067j4")]
