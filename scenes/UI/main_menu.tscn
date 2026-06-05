@@ -1,21 +1,53 @@
-[gd_scene format=3 uid="uid://dj403eruhkkln"]
+[gd_scene format=3 uid="uid://uglod2swuclp"]
 
 [ext_resource type="FontFile" uid="uid://kv6jtfnhy5c2" path="res://asset/fonts/Modak/Modak-Regular.ttf" id="1_l6cm7"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
-corner_radius_top_left = 25
-corner_radius_top_right = 25
-corner_radius_bottom_right = 25
-corner_radius_bottom_left = 25
-shadow_color = Color(0.3328807, 0.33288068, 0.33288068, 0.6)
-shadow_size = 5
+bg_color = Color(0.38431373, 0.27450982, 0.41960785, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27058825, 0.21176471, 0.29411766, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.627451, 0.65882355, 0.7529412, 0.08235294)
+shadow_size = 15
 shadow_offset = Vector2(5, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.1764706, 0.13333334, 0.14901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27058825, 0.21176471, 0.29411766, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.627451, 0.65882355, 0.7529412, 0.08235294)
+shadow_size = 15
+shadow_offset = Vector2(5, 5)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.27058825, 0.21176471, 0.29411766, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.23529412, 0.2, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.627451, 0.65882355, 0.7529412, 0.08235294)
+shadow_size = 15
+shadow_offset = Vector2(5, 5)
 
-[node name="Control" type="Control" unique_id=1702803337]
+[node name="MainMenu" type="Control" unique_id=1702803337]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -63,8 +95,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 40
 
-[node name="Button" type="Button" parent="VBoxContainer" unique_id=961909818]
+[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=961909818]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.27058825, 0.21176471, 0.29411766, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 64
 theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
@@ -72,8 +106,13 @@ theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
 text = "START"
 
-[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1828869984]
+[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1222201862]
 layout_mode = 2
+theme_override_colors/font_outline_color = Color(0.27058825, 0.21176471, 0.29411766, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_l6cm7")
 theme_override_font_sizes/font_size = 64
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
 text = "EXIT"

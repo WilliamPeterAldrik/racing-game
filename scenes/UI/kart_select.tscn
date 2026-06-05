@@ -1,0 +1,46 @@
+[gd_scene format=3 uid="uid://dv451qcujgnbv"]
+
+[ext_resource type="FontFile" uid="uid://kv6jtfnhy5c2" path="res://asset/fonts/Modak/Modak-Regular.ttf" id="1_v25wp"]
+
+[node name="KartSelect" type="Control" unique_id=53374393]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=677407745]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="." unique_id=709370523]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -215.0
+offset_top = 10.0
+offset_right = 215.0
+offset_bottom = 225.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("1_v25wp")
+theme_override_font_sizes/font_size = 70
+text = "SELECT YOUR
+VEHICLE"
+horizontal_alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=534669483]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 215.0
+offset_right = 1151.0
+offset_bottom = 648.0
+
+[node name="GridContainer" type="GridContainer" parent="CenterContainer" unique_id=1482724735]
+layout_mode = 2
+columns = 2
