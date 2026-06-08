@@ -1,6 +1,6 @@
-[gd_scene format=3 uid="uid://c6as53hyemgf"]
+[gd_scene format=3 uid="uid://cjyw6027tyl3f"]
 
-[ext_resource type="FontFile" uid="uid://kv6jtfnhy5c2" path="res://asset/fonts/Modak/Modak-Regular.ttf" id="1_l6cm7"]
+[ext_resource type="FontFile" uid="uid://kv6jtfnhy5c2" path="res://asset/fonts/Modak/Modak-Regular.ttf" id="1_qo2fb"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
 bg_color = Color(0.38431373, 0.27450982, 0.41960785, 1)
@@ -47,72 +47,89 @@ shadow_color = Color(0.627451, 0.65882355, 0.7529412, 0.08235294)
 shadow_size = 15
 shadow_offset = Vector2(5, 5)
 
-[node name="MainMenu" type="Control" unique_id=1702803337]
-layout_mode = 3
+[node name="PauseMenu" type="CanvasLayer" unique_id=1036098452]
+process_mode = 3
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=759802573]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+color = Color(0, 0, 0, 0.60784316)
 
-[node name="Panel" type="Panel" parent="." unique_id=959480209]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Label" type="Label" parent="." unique_id=861531874]
-layout_mode = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2073340634]
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -82.0
-offset_top = -157.0
-offset_right = 82.0
-offset_bottom = -60.0
+offset_left = -182.875
+offset_top = -85.0
+offset_right = 182.875
+offset_bottom = 236.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_fonts/font = ExtResource("1_l6cm7")
-theme_override_font_sizes/font_size = 100
-text = "TITLE"
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+alignment = 1
 
-[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1148285691]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -125.0
-offset_top = -18.0
-offset_right = 125.0
-offset_bottom = 232.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 40
-
-[node name="StartButton" type="Button" parent="VBoxContainer" unique_id=961909818]
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1154350215]
+custom_minimum_size = Vector2(40, 20)
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_outline_color = Color(0.27058825, 0.21176471, 0.29411766, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("1_l6cm7")
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("1_qo2fb")
+theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
-text = "START"
+text = "RESUME"
 
-[node name="ExitButton" type="Button" parent="VBoxContainer" unique_id=1222201862]
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1764171177]
+custom_minimum_size = Vector2(40, 20)
 layout_mode = 2
+size_flags_vertical = 3
 theme_override_colors/font_outline_color = Color(0.27058825, 0.21176471, 0.29411766, 1)
 theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("1_l6cm7")
-theme_override_font_sizes/font_size = 64
+theme_override_fonts/font = ExtResource("1_qo2fb")
+theme_override_font_sizes/font_size = 56
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+text = "RESTART"
+
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1561298034]
+custom_minimum_size = Vector2(40, 20)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_outline_color = Color(0.27058825, 0.21176471, 0.29411766, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_qo2fb")
+theme_override_font_sizes/font_size = 56
 theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
 theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
 theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
 text = "EXIT"
+
+[node name="Label" type="Label" parent="." unique_id=1777422527]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -179.0
+offset_top = -254.0
+offset_right = 179.0
+offset_bottom = -102.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_qo2fb")
+theme_override_font_sizes/font_size = 100
+text = "PAUSED"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button3" to="." method="_on_exit_button_pressed"]

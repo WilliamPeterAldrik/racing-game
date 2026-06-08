@@ -1,29 +1,238 @@
 [gd_scene format=3 uid="uid://rsmrxyspdjfn"]
 
-[node name="track_selection" type="Control" unique_id=1533825390]
+[ext_resource type="Texture2D" uid="uid://d23grvqlv1nr2" path="res://asset/img/arrow_left.png" id="1_evq7p"]
+[ext_resource type="Script" uid="uid://bjkn408dt3ami" path="res://scripts/carousel_container.gd" id="1_qlpyp"]
+[ext_resource type="Script" uid="uid://ca52ct4fun7ri" path="res://scripts/track_selection.gd" id="1_xceqj"]
+[ext_resource type="Texture2D" uid="uid://cvv36rtwrkhlv" path="res://asset/img/monza.png" id="2_hgje4"]
+[ext_resource type="Texture2D" uid="uid://q20gn55por54" path="res://asset/img/arrow_right.png" id="2_xceqj"]
+[ext_resource type="Texture2D" uid="uid://74ahg22ctnwj" path="res://asset/img/albert_park.png" id="3_erm7s"]
+[ext_resource type="Texture2D" uid="uid://ddqdksqe5xtu2" path="res://asset/img/vegas.png" id="4_evq7p"]
+[ext_resource type="FontFile" uid="uid://kv6jtfnhy5c2" path="res://asset/fonts/Modak/Modak-Regular.ttf" id="5_xceqj"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_l6cm7"]
+bg_color = Color(0.38431373, 0.27450982, 0.41960785, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27058825, 0.21176471, 0.29411766, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.627451, 0.65882355, 0.7529412, 0.08235294)
+shadow_size = 15
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ekxnf"]
+bg_color = Color(0.1764706, 0.13333334, 0.14901961, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.27058825, 0.21176471, 0.29411766, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.627451, 0.65882355, 0.7529412, 0.08235294)
+shadow_size = 15
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_bqqt6"]
+bg_color = Color(0.27058825, 0.21176471, 0.29411766, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.23529412, 0.2, 0.2784314, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_color = Color(0.627451, 0.65882355, 0.7529412, 0.08235294)
+shadow_size = 15
+shadow_offset = Vector2(5, 5)
+
+[node name="TrackSelection" type="Control" unique_id=344695109]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_xceqj")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=2037099212]
+[node name="Panel" type="Panel" parent="." unique_id=1052108171]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -576.0
+offset_top = -324.0
+offset_right = 576.0
+offset_bottom = 324.0
 
-[node name="track_1" type="Button" parent="HBoxContainer" unique_id=1206637166]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel" unique_id=1071918566]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -533.78125
+offset_top = -101.75
+offset_right = 533.78125
+offset_bottom = 101.75
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 650
+
+[node name="left_button" type="Button" parent="Panel/HBoxContainer" unique_id=1756400826]
+texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+icon = ExtResource("1_evq7p")
+icon_alignment = 1
+expand_icon = true
 
-[node name="track_2" type="Button" parent="HBoxContainer" unique_id=1047089531]
+[node name="right_button" type="Button" parent="Panel/HBoxContainer" unique_id=1783036225]
+texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 3
+theme_override_styles/normal = SubResource("StyleBoxFlat_l6cm7")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_ekxnf")
+theme_override_styles/hover = SubResource("StyleBoxFlat_bqqt6")
+icon = ExtResource("2_xceqj")
+icon_alignment = 1
+expand_icon = true
 
-[node name="track_3" type="Button" parent="HBoxContainer" unique_id=1506353439]
-layout_mode = 2
+[node name="Label" type="Label" parent="Panel" unique_id=1193807187]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -128.0
+offset_right = 128.0
+offset_bottom = 152.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("5_xceqj")
+theme_override_font_sizes/font_size = 100
+text = "Track Select"
 
-[node name="Label" type="Label" parent="." unique_id=18470078]
+[node name="CarouselContainer" type="Node2D" parent="." unique_id=1865388603 node_paths=PackedStringArray("position_offset_node")]
+rotation = 3.1415927
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_qlpyp")
+wraparound_enabled = true
+opacity_strength = 1.0
+selected_index = 2
+position_offset_node = NodePath("Control")
+metadata/_custom_type_script = "uid://bjkn408dt3ami"
+
+[node name="Control" type="Control" parent="CarouselContainer" unique_id=67602225]
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+grow_vertical = 2
+rotation = 3.1415927
+
+[node name="italy_track" type="Button" parent="CarouselContainer/Control" unique_id=1071668988]
+modulate = Color(1, 1, 1, 0)
+z_index = -2
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Track Selection"
+offset_left = -567.5
+offset_top = -408.0
+offset_right = 567.5
+offset_bottom = 208.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(567.5, 308)
+icon = ExtResource("2_hgje4")
+
+[node name="Label" type="Label" parent="CarouselContainer/Control/italy_track" unique_id=1399910568]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -292.0
+offset_top = 94.0
+offset_right = 292.0
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(128, 76)
+focus_mode = 2
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("5_xceqj")
+theme_override_font_sizes/font_size = 100
+text = "Italy - Monza"
+
+[node name="melbourne_track" type="Button" parent="CarouselContainer/Control" unique_id=1901012375]
+modulate = Color(1, 1, 1, 0)
+z_index = -1
+layout_mode = 0
+offset_left = -543.9999
+offset_top = -408.0
+offset_right = 543.9999
+offset_bottom = 208.0
+scale = Vector2(0.75, 0.75)
+pivot_offset = Vector2(543.9999, 308)
+icon = ExtResource("3_erm7s")
+
+[node name="Label" type="Label" parent="CarouselContainer/Control/melbourne_track" unique_id=553428921]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -497.49988
+offset_top = 94.0
+offset_right = 497.50012
+offset_bottom = 246.0
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(128, 76)
+focus_mode = 2
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("5_xceqj")
+theme_override_font_sizes/font_size = 100
+text = "Australia - Melbourne"
+
+[node name="us_track" type="Button" parent="CarouselContainer/Control" unique_id=1267089530]
+z_index = 1
+layout_mode = 0
+offset_left = -567.5
+offset_top = -308.0
+offset_right = 567.5
+offset_bottom = 308.0
+pivot_offset = Vector2(567.5, 308)
+icon = ExtResource("4_evq7p")
+
+[node name="Label" type="Label" parent="CarouselContainer/Control/us_track" unique_id=1460979437]
+z_index = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -580.99994
+offset_top = 94.00006
+offset_right = 581.0001
+offset_bottom = 246.00018
+grow_horizontal = 2
+grow_vertical = 0
+pivot_offset = Vector2(128, 76)
+focus_mode = 2
+mouse_filter = 0
+theme_override_fonts/font = ExtResource("5_xceqj")
+theme_override_font_sizes/font_size = 100
+text = "United States - Las Vegas"
