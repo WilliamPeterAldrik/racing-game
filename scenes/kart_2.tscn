@@ -254,8 +254,12 @@ shape = SubResource("ConvexPolygonShape3D_lj1wc")
 shape = SubResource("ConvexPolygonShape3D_nlh2e")
 
 [node name="wheel_1" type="VehicleWheel3D" parent="kart_2_body" unique_id=654289404]
-
-[node name="wheel-back-right" type="MeshInstance3D" parent="kart_2_body/wheel_1" unique_id=59773476]
+use_as_traction = true
+wheel_rest_length = 0.2
+wheel_radius = 0.4
+wheel_friction_slip = 1.1
+suspension_travel = 0.15
+suspension_stiffness = 80.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27737227, 0.20977734, -0.3606073)
 mesh = SubResource("ArrayMesh_q2y87")
 
@@ -264,8 +268,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27737227, 0.20977734, -0.3
 shape = SubResource("ConvexPolygonShape3D_isqbw")
 
 [node name="wheel_2" type="VehicleWheel3D" parent="kart_2_body" unique_id=1940069114]
-
-[node name="wheel-front-left" type="MeshInstance3D" parent="kart_2_body/wheel_2" unique_id=948827581]
+use_as_steering = true
+wheel_roll_influence = 0.01
+wheel_rest_length = 0.2
+wheel_radius = 0.4
+wheel_friction_slip = 1.4
+suspension_stiffness = 120.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27737227, 0.20977734, 0.32373303)
 mesh = SubResource("ArrayMesh_5w67a")
 
@@ -274,6 +282,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27737227, 0.20977734, 0.323
 shape = SubResource("ConvexPolygonShape3D_ycavn")
 
 [node name="wheel_3" type="VehicleWheel3D" parent="kart_2_body" unique_id=31672483]
+use_as_steering = true
+wheel_roll_influence = 0.01
+wheel_rest_length = 0.2
+wheel_radius = 0.4
+wheel_friction_slip = 1.4
+suspension_stiffness = 120.0
 
 [node name="wheel-front-right" type="MeshInstance3D" parent="kart_2_body/wheel_3" unique_id=933408887]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27737227, 0.20977734, 0.32373303)
@@ -284,8 +298,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.27737227, 0.20977734, 0.32
 shape = SubResource("ConvexPolygonShape3D_ugtnk")
 
 [node name="wheel_4" type="VehicleWheel3D" parent="kart_2_body" unique_id=2115245206]
-
-[node name="wheel-back-left" type="MeshInstance3D" parent="kart_2_body/wheel_4" unique_id=1852930003]
+use_as_traction = true
+wheel_rest_length = 0.2
+wheel_radius = 0.4
+wheel_friction_slip = 1.1
+suspension_travel = 0.15
+suspension_stiffness = 80.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.27737227, 0.20977734, -0.3606073)
 mesh = SubResource("ArrayMesh_i8sf7")
 

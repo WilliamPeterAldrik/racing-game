@@ -8,8 +8,9 @@ var look_at
 @onready var camera_3d = $camera_base/Camera3D
 
 func _ready() -> void:
-	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
+	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	look_at = global_position
+	pass
 	
 	
 func _physics_process(delta):
@@ -19,4 +20,3 @@ func _physics_process(delta):
 	camera_pivot.transform = camera_pivot.transform.interpolate_with(transform,delta*5.0)
 	look_at = look_at.lerp(global_position + linear_velocity, delta * 5.0)
 	camera_3d.look_at(global_position + linear_velocity)
-	

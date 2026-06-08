@@ -1,5 +1,7 @@
 [gd_scene format=4 uid="uid://d0yumn8dduq62"]
 
+[ext_resource type="PackedScene" uid="uid://b2nvycnyeejxm" path="res://test2.tscn" id="1_c6n00"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vsi2n"]
 resource_name = "grey.060"
 albedo_color = Color(0.9754679, 0.9772474, 0.98432255, 1)
@@ -1748,6 +1750,7 @@ mesh = SubResource("ArrayMesh_xnbyu")
 [node name="StaticBody3D" type="StaticBody3D" parent="roadStart(Clone)" unique_id=240162233]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="roadStart(Clone)/StaticBody3D" unique_id=1262332111]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -0.07074928)
 shape = SubResource("ConcavePolygonShape3D_c6n00")
 
 [node name="roadStartPositions(Clone)" type="MeshInstance3D" parent="." unique_id=1960420898]
@@ -2185,3 +2188,6 @@ mesh = SubResource("ArrayMesh_rrpo5")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="roadStraightLongBumpRound(Clone)4/StaticBody3D" unique_id=1121602097]
 shape = SubResource("ConcavePolygonShape3D_0wqb4")
+
+[node name="kart-oobi2" parent="." unique_id=2073171433 instance=ExtResource("1_c6n00")]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.058848, 0.010649189, -0.5752917)

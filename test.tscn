@@ -483,6 +483,7 @@ script = ExtResource("1_37kl0")
 [node name="BackLeft" type="VehicleWheel3D" parent="." unique_id=583539092]
 use_as_traction = true
 wheel_rest_length = 0.2
+wheel_radius = 0.4
 wheel_friction_slip = 1.1
 suspension_travel = 0.15
 suspension_stiffness = 80.0
@@ -493,6 +494,7 @@ mesh = SubResource("ArrayMesh_pg8yh")
 [node name="BackRight" type="VehicleWheel3D" parent="." unique_id=1392219735]
 use_as_traction = true
 wheel_rest_length = 0.2
+wheel_radius = 0.4
 wheel_friction_slip = 1.1
 suspension_travel = 0.15
 suspension_stiffness = 80.0
@@ -504,6 +506,7 @@ mesh = SubResource("ArrayMesh_iuifp")
 use_as_steering = true
 wheel_roll_influence = 0.01
 wheel_rest_length = 0.2
+wheel_radius = 0.4
 wheel_friction_slip = 1.4
 suspension_stiffness = 120.0
 
@@ -514,6 +517,7 @@ mesh = SubResource("ArrayMesh_tipoj")
 use_as_steering = true
 wheel_roll_influence = 0.01
 wheel_rest_length = 0.2
+wheel_radius = 0.4
 wheel_friction_slip = 1.4
 suspension_stiffness = 120.0
 
@@ -533,4 +537,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.1, 0.7)
 
 [node name="Camera3D" type="Camera3D" parent="camera_base" unique_id=624599024]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 1.4693484, -4.3371725)
+top_level = false
 fov = 107.90254
