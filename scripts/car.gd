@@ -1,5 +1,5 @@
 extends  VehicleBody3D
-
+#OTHER ASSIST START 
 const MAX_STEER = 0.8
 const ENGINE_POWER = 300
 var look_at
@@ -10,7 +10,6 @@ var look_at
 func _ready() -> void:
 	#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 	look_at = global_position
-	pass
 	
 	
 func _physics_process(delta):
@@ -20,3 +19,4 @@ func _physics_process(delta):
 	camera_pivot.transform = camera_pivot.transform.interpolate_with(transform,delta*5.0)
 	look_at = look_at.lerp(global_position + linear_velocity, delta * 5.0)
 	camera_3d.look_at(global_position + linear_velocity)
+#OTHER ASSIST END
