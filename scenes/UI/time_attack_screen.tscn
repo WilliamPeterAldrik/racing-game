@@ -1,0 +1,75 @@
+[gd_scene format=3 uid="uid://c5pjtbbkwqpea"]
+
+[ext_resource type="Texture2D" uid="uid://mo6k1fss7mwp" path="res://asset/img/crown.png" id="1_wqxrc"]
+[ext_resource type="FontFile" uid="uid://kv6jtfnhy5c2" path="res://asset/fonts/Modak/Modak-Regular.ttf" id="2_sds2u"]
+
+[node name="TimeAttackScreen" type="Control" unique_id=274745534]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="." unique_id=590524100]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1805833390]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -364.0
+offset_top = 38.0
+offset_right = 364.0
+offset_bottom = 238.0
+grow_horizontal = 2
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer" unique_id=234954996]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("1_wqxrc")
+
+[node name="Label" type="Label" parent="HBoxContainer" unique_id=99993217]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sds2u")
+theme_override_font_sizes/font_size = 132
+text = "00:00:00"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=986120539]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -207.0
+offset_top = -393.0
+offset_right = 207.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=1516093180]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sds2u")
+theme_override_font_sizes/font_size = 80
+text = "1. 00:00:00"
+
+[node name="Label2" type="Label" parent="VBoxContainer" unique_id=111470806]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sds2u")
+theme_override_font_sizes/font_size = 80
+text = "2. 00:00:00"
+
+[node name="Label3" type="Label" parent="VBoxContainer" unique_id=695627420]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_sds2u")
+theme_override_font_sizes/font_size = 80
+text = "3. 00:00:00"

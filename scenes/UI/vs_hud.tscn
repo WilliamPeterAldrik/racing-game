@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://bfyl2mxw3ur3q"]
+
+[ext_resource type="FontFile" uid="uid://kv6jtfnhy5c2" path="res://asset/fonts/Modak/Modak-Regular.ttf" id="1_hb7ph"]
+[ext_resource type="Texture2D" uid="uid://mo6k1fss7mwp" path="res://asset/img/crown.png" id="2_btrri"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5c8vw"]
+bg_color = Color(0.627451, 0.65882355, 0.7490196, 1)
+
+[node name="VsHUD" type="CanvasLayer" unique_id=1483542784]
+
+[node name="Label" type="Label" parent="." unique_id=1615578836]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -102.0
+offset_right = 187.0
+offset_bottom = 35.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_hb7ph")
+theme_override_font_sizes/font_size = 90
+text = "0 / 3"
+
+[node name="Label2" type="Label" parent="." unique_id=496193933]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = -102.0
+offset_right = 193.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_hb7ph")
+theme_override_font_sizes/font_size = 90
+text = "0 / 3"
+
+[node name="Label3" type="Label" parent="." unique_id=75982809]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -82.0
+offset_top = -122.0
+offset_right = -10.0
+offset_bottom = 43.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_hb7ph")
+theme_override_font_sizes/font_size = 109
+text = "1."
+
+[node name="TextureRect" type="TextureRect" parent="Label3" unique_id=36192258]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 19.0
+offset_right = 4.0
+offset_bottom = 57.0
+grow_horizontal = 2
+texture = ExtResource("2_btrri")
+
+[node name="Label4" type="Label" parent="." unique_id=700712521]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -684.0
+offset_top = -122.0
+offset_right = -591.0
+offset_bottom = 43.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_hb7ph")
+theme_override_font_sizes/font_size = 109
+text = "2."
+
+[node name="TextureRect" type="TextureRect" parent="Label4" unique_id=202603986]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -34.0
+offset_top = 19.0
+offset_right = 4.0
+offset_bottom = 57.0
+grow_horizontal = 2
+texture = ExtResource("2_btrri")
+
+[node name="Panel" type="Panel" parent="." unique_id=1425514680]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -5.0
+offset_top = -323.5
+offset_right = 5.0
+offset_bottom = 323.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_5c8vw")
