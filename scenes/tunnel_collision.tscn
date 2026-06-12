@@ -1,0 +1,5 @@
+[gd_scene format=3 uid="uid://1tam15bp4ja4"]
+
+[ext_resource type="PackedScene" uid="uid://dnifctoxe4yrt" path="res://asset/tunnel_collision.glb" id="1_axvv8"]
+
+[node name="tunnel_collision" unique_id=1973740015 instance=ExtResource("1_axvv8")]
