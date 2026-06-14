@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://yxlci2a1ng8t" path="res://scripts/car.gd" id="1_qih2i"]
 [ext_resource type="Texture2D" uid="uid://dl1gs52ybkogb" path="res://asset/kenney_car-kit/Models/GLB format/Textures/colormap.png" id="1_vfvc6"]
+[ext_resource type="AudioStream" uid="uid://dx1a5lg7a5acl" path="res://On.wav" id="3_2pks0"]
+[ext_resource type="AudioStream" uid="uid://cj34ry0opw6ht" path="res://Off.wav" id="4_yerdr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kd837"]
 resource_name = "colormap"
@@ -291,3 +293,14 @@ transform = Transform3D(-1, 2.262668e-08, -8.444392e-08, 0, 0.9659258, 0.2588190
 
 [node name="Center Mass" type="Node3D" parent="." unique_id=1722830020]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.029129408, 0.0076681077)
+
+[node name="EngineOn" type="AudioStreamPlayer3D" parent="." unique_id=644879913]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.044806957, 0)
+stream = ExtResource("3_2pks0")
+volume_db = -80.0
+max_db = 0.0
+autoplay = true
+
+[node name="EngineOff" type="AudioStreamPlayer3D" parent="." unique_id=1420167423]
+stream = ExtResource("4_yerdr")
+volume_db = -80.0
