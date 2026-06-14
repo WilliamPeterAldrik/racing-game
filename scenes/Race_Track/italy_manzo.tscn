@@ -1,7 +1,6 @@
 [gd_scene format=4 uid="uid://d0yumn8dduq62"]
 
 [ext_resource type="PackedScene" uid="uid://b2nvycnyeejxm" path="res://test2.tscn" id="1_c6n00"]
-[ext_resource type="Script" uid="uid://tds1341iv4n1" path="res://scripts/checkpoints.gd" id="2_aktdn"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vsi2n"]
 resource_name = "grey.060"
@@ -2192,6 +2191,3 @@ shape = SubResource("ConcavePolygonShape3D_0wqb4")
 
 [node name="kart-oobi2" parent="." unique_id=2073171433 instance=ExtResource("1_c6n00")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.058848, 0.010649189, -0.5752917)
-
-[node name="Checkpoints" type="Node3D" parent="." unique_id=2093591661]
-script = ExtResource("2_aktdn")
