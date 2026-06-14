@@ -128,7 +128,6 @@ scale = Vector2(0.5, 0.5)
 script = ExtResource("1_qlpyp")
 wraparound_enabled = true
 opacity_strength = 1.0
-selected_index = 2
 position_offset_node = NodePath("Control")
 metadata/_custom_type_script = "uid://bjkn408dt3ami"
 
@@ -141,16 +140,16 @@ grow_vertical = 2
 rotation = 3.1415927
 
 [node name="italy_track" type="Button" parent="CarouselContainer/Control" unique_id=1071668988]
-modulate = Color(1, 1, 1, 0)
-z_index = -2
+z_index = 1
+custom_minimum_size = Vector2(1135, 616)
 layout_mode = 0
 offset_left = -567.5
-offset_top = -408.0
+offset_top = -308.0
 offset_right = 567.5
-offset_bottom = 208.0
-scale = Vector2(0.5, 0.5)
+offset_bottom = 308.0
 pivot_offset = Vector2(567.5, 308)
 icon = ExtResource("2_hgje4")
+expand_icon = true
 
 [node name="Label" type="Label" parent="CarouselContainer/Control/italy_track" unique_id=1399910568]
 z_index = 1
@@ -176,14 +175,16 @@ text = "Italy - Monza"
 [node name="melbourne_track" type="Button" parent="CarouselContainer/Control" unique_id=1901012375]
 modulate = Color(1, 1, 1, 0)
 z_index = -1
+custom_minimum_size = Vector2(1135, 616)
 layout_mode = 0
-offset_left = -543.9999
+offset_left = -567.5
 offset_top = -408.0
-offset_right = 543.9999
+offset_right = 567.5
 offset_bottom = 208.0
 scale = Vector2(0.75, 0.75)
-pivot_offset = Vector2(543.9999, 308)
+pivot_offset = Vector2(567.5, 308)
 icon = ExtResource("3_erm7s")
+expand_icon = true
 
 [node name="Label" type="Label" parent="CarouselContainer/Control/melbourne_track" unique_id=553428921]
 z_index = 1
@@ -207,14 +208,18 @@ theme_override_font_sizes/font_size = 100
 text = "Australia - Melbourne"
 
 [node name="us_track" type="Button" parent="CarouselContainer/Control" unique_id=1267089530]
-z_index = 1
+modulate = Color(1, 1, 1, 0)
+z_index = -2
+custom_minimum_size = Vector2(1135, 616)
 layout_mode = 0
 offset_left = -567.5
-offset_top = -308.0
+offset_top = -408.0
 offset_right = 567.5
-offset_bottom = 308.0
+offset_bottom = 208.0
+scale = Vector2(0.5, 0.5)
 pivot_offset = Vector2(567.5, 308)
 icon = ExtResource("4_evq7p")
+expand_icon = true
 
 [node name="Label" type="Label" parent="CarouselContainer/Control/us_track" unique_id=1460979437]
 z_index = 1
@@ -236,3 +241,5 @@ mouse_filter = 0
 theme_override_fonts/font = ExtResource("5_xceqj")
 theme_override_font_sizes/font_size = 100
 text = "United States - Las Vegas"
+
+[connection signal="pressed" from="CarouselContainer/Control/italy_track" to="." method="_on_italy_track_pressed"]

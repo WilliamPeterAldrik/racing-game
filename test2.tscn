@@ -217,23 +217,24 @@ _surfaces = [{
 blend_shape_mode = 0
 shadow_mesh = SubResource("ArrayMesh_qa4a3")
 
-[node name="kart-oobi2" type="VehicleBody3D" unique_id=2073171433]
-center_of_mass_mode = 1
-center_of_mass = Vector3(0, 0.03, 0.01)
+[node name="kart-oobi2" type="VehicleBody3D" unique_id=1176187647]
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_qih2i")
 
 [node name="kart-oobi" type="MeshInstance3D" parent="." unique_id=39108647]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 mesh = SubResource("ArrayMesh_uxx77")
 
 [node name="character" type="MeshInstance3D" parent="kart-oobi" unique_id=157615540]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.637823e-14, 0.055315554, -0.013603176)
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 7.637823e-14, 0.055315554, -0.013603176)
 mesh = SubResource("ArrayMesh_omh4h")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=488120527]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 0, 0)
 shape = SubResource("ConvexPolygonShape3D_qih2i")
 
 [node name="VehicleWheel3D" type="VehicleWheel3D" parent="." unique_id=864488682]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055474456, 0.045888275, -0.07212146)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.055474456, 0.045888275, -0.07212146)
 use_as_traction = true
 wheel_friction_slip = 2.2
 suspension_travel = 0.15
@@ -243,10 +244,11 @@ damping_compression = 3.0
 damping_relaxation = 3.5
 
 [node name="wheel-back-right" type="MeshInstance3D" parent="VehicleWheel3D" unique_id=639957009]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.02, 0, 0)
 mesh = SubResource("ArrayMesh_fa8pt")
 
 [node name="VehicleWheel3D2" type="VehicleWheel3D" parent="." unique_id=1500101877]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.055474456, 0.041955467, 0.06474661)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.055474456, 0.041955467, 0.06474661)
 use_as_steering = true
 wheel_friction_slip = 1.2
 suspension_travel = 0.15
@@ -256,10 +258,11 @@ damping_compression = 3.0
 damping_relaxation = 3.5
 
 [node name="wheel-front-right" type="MeshInstance3D" parent="VehicleWheel3D2" unique_id=1622928572]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0.01, 0, 0)
 mesh = SubResource("ArrayMesh_7svb2")
 
 [node name="VehicleWheel3D3" type="VehicleWheel3D" parent="." unique_id=1229784567]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055, 0.046, -0.072)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.055, 0.046, -0.072)
 use_as_traction = true
 wheel_friction_slip = 2.2
 suspension_travel = 0.15
@@ -269,10 +272,11 @@ damping_compression = 3.0
 damping_relaxation = 3.5
 
 [node name="wheel-back-left" type="MeshInstance3D" parent="VehicleWheel3D3" unique_id=1961591805]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.02, 0, 0)
 mesh = SubResource("ArrayMesh_avntw")
 
 [node name="VehicleWheel3D4" type="VehicleWheel3D" parent="." unique_id=979968216]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.055474456, 0.041955467, 0.06474661)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.055474456, 0.041955467, 0.06474661)
 use_as_steering = true
 wheel_friction_slip = 1.2
 suspension_travel = 0.15
@@ -282,6 +286,7 @@ damping_compression = 3.0
 damping_relaxation = 3.5
 
 [node name="wheel-front-left" type="MeshInstance3D" parent="VehicleWheel3D4" unique_id=688186005]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, -0.01, 0, 0)
 mesh = SubResource("ArrayMesh_xswtc")
 
 [node name="camera_base" type="Node3D" parent="." unique_id=427911382]
@@ -289,7 +294,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22816277, 0.019482195, 0.07
 top_level = true
 
 [node name="Camera3D" type="Camera3D" parent="camera_base" unique_id=680031039]
-transform = Transform3D(-1, 2.262668e-08, -8.444392e-08, 0, 0.9659258, 0.25881904, 8.742278e-08, 0.25881904, -0.9659258, 0, 0.3, 0.5)
+transform = Transform3D(-1, 3.908059e-08, -1.4585073e-07, 0, 0.96592575, 0.25881904, 1.509958e-07, 0.25881904, -0.96592575, 0, 0.3, 0.5)
+current = true
 
 [node name="Center Mass" type="Node3D" parent="." unique_id=1722830020]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.029129408, 0.0076681077)

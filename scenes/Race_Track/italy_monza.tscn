@@ -9,6 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://c4pr4qc80xu2l" path="res://asset/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/car_police.gltf" id="6_0lx0s"]
 [ext_resource type="PackedScene" uid="uid://d2odhan3rl0hk" path="res://asset/KayKit_City_Builder_Bits_1.0_FREE/Assets/gltf/trafficlight_C.gltf" id="7_iilmw"]
 [ext_resource type="PackedScene" uid="uid://b2nvycnyeejxm" path="res://test2.tscn" id="8_0lx0s"]
+[ext_resource type="PackedScene" uid="uid://cjyw6027tyl3f" path="res://scenes/UI/pause_menu.tscn" id="9_iilmw"]
+[ext_resource type="PackedScene" uid="uid://nwitlddk5c40" path="res://scenes/UI/time_attack_hud.tscn" id="10_f5213"]
+[ext_resource type="Script" uid="uid://tds1341iv4n1" path="res://scripts/checkpoints.gd" id="12_r87dr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r87dr"]
 size = Vector3(24.36349, 0.001, 41.03)
@@ -1810,6 +1813,9 @@ sky = SubResource("Sky_iilmw")
 [sub_resource type="BoxShape3D" id="BoxShape3D_3ya5o"]
 size = Vector3(1, 1.3227539, 0.18798828)
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_im5hp"]
+size = Vector3(1, 0.41259766, 0.25598145)
+
 [node name="italy_manzo" type="Node3D" unique_id=686639044]
 script = ExtResource("1_iilmw")
 
@@ -2503,7 +2509,7 @@ transform = Transform3D(-0.07012218, 0, -0.99753845, 0, 1, 0, 0.99753845, 0, -0.
 [node name="trafficlight_C2" parent="." unique_id=161184206 instance=ExtResource("7_iilmw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.5741796, 0.05270648, -19.853909)
 
-[node name="kart-oobi2" parent="." unique_id=2073171433 instance=ExtResource("8_0lx0s")]
+[node name="kart_1" parent="." unique_id=2073171433 instance=ExtResource("8_0lx0s")]
 transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.0600944, 0.05270648, -1.5213265)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=206721208]
@@ -2518,5 +2524,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.085444, 0, -0.58292574)
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Finish line" unique_id=469240615]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3509649, -0.6962785)
 shape = SubResource("BoxShape3D_3ya5o")
+
+[node name="TimeAttackHUD" parent="." unique_id=313057301 instance=ExtResource("10_f5213")]
+checkpoints_node = NodePath("../Checkpoints")
+
+[node name="PauseMenu" parent="." unique_id=1036098452 instance=ExtResource("9_iilmw")]
+
+[node name="Checkpoints" type="Node3D" parent="." unique_id=2010557751]
+script = ExtResource("12_r87dr")
+
+[node name="Area3D" type="Area3D" parent="Checkpoints" unique_id=965219419]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9648805, 0, -2.085959)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/Area3D" unique_id=1513788971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11701441, 0.1934281, -0.12179184)
+shape = SubResource("BoxShape3D_im5hp")
+debug_color = Color(0.99607843, 0, 0.17254902, 0.6392157)
 
 [connection signal="body_entered" from="Finish line" to="." method="_on_finish_line_body_entered"]

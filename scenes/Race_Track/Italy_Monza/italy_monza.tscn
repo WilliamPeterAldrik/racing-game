@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d4kcggut4hg1i"]
+[gd_scene format=3 uid="uid://cx13a85b0gmyj"]
 
 [ext_resource type="PackedScene" uid="uid://1tam15bp4ja4" path="res://scenes/track_items/tunnel_collision.tscn" id="1_lpqoi"]
 [ext_resource type="PackedScene" uid="uid://nw2yotaqyt55" path="res://scenes/Race_Track/Italy_Monza/monza_track_only.tscn" id="1_mmmog"]
@@ -357,4 +357,4 @@ environment = SubResource("Environment_7fbvo")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.119251, 12.136579, 11.076751)
 
 [node name="kart-oobi2" parent="." unique_id=2073171433 instance=ExtResource("20_7fbvo")]
-transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 3.777142, 0.001085341, 2.0484123)
+transform = Transform3D(-1, 0, -8.742278e-08, 0, 1, 0, 8.742278e-08, 0, -1, 4.438939, -0.0134812, -0.92613983)

@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="RacingGame"
-run/main_scene="uid://d0yumn8dduq62"
+run/main_scene="uid://c6as53hyemgf"
 config/features=PackedStringArray("4.6", "Mobile")
 config/icon="res://icon.svg"
+
+[autoload]
+
+RaceResult="*uid://6vx0mj1lhkw8"
 
 [input]
 

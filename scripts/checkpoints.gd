@@ -1,12 +1,16 @@
 extends Node
 
+signal lap_completed(lap_number: int, lap_time: float)
+signal race_finished(lap_times: Array)
+
 var current_lap = 1
-#var max_laps = 3 # Balapan selesai di 3 lap
+var max_laps = 3 
+# Balapan selesai di 3 lap
 var next_checkpoint_index = 0
 var lap_times = []
 var start_time = 0.0
 
-@onready var checkpoints = $Checkpoints # Path ke folder penyimpan Area3D
+@onready var checkpoints = self # Path ke folder penyimpan Area3D
 
 func _ready():
 	start_time = Time.get_ticks_msec() / 1000.0
@@ -38,8 +42,15 @@ func _lap_selesai():
 	
 	if current_lap >= max_laps:
 		print("Balapan Selesai! Kamu Hebat!")
+		RaceResult.record_race(lap_times)
+		race_finished.emit(lap_times)
 		# Nanti di sini kamu bisa panggil UI buat nunjukin skor akhir
 	else:
+		lap_completed.emit(current_lap, current_time)
 		current_lap += 1
 		next_checkpoint_index = 0
-		start_time = Time.get_ticks_msec() / 1000.0 # Reset waktu buat lap selanjutnya
+		start_time = Time.get_ticks_msec() / 1000.0
+		 # Reset waktu buat lap selanjutnya
+
+func get_elapsed_time() -> float:
+	return (Time.get_ticks_msec() / 1000.0) - start_time

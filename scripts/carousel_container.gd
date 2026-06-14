@@ -48,13 +48,17 @@ func _process(delta: float) -> void:
 		target_opacity = clamp(target_opacity, 0.0, 1.0)
 		i.modulate.a = lerp(i.modulate.a, target_opacity, smoothing_speed * delta)
 		
+#		AI ASSISTED START
 		if i.get_index() == selected_index:
 			i.z_index = 1
 			i.mouse_filter = Control.MOUSE_FILTER_STOP
 			i.focus_mode = Control.FOCUS_ALL
 		else:
 			i.z_index = -abs(i.get_index()-selected_index)
-			
+			i.mouse_filter = Control.MOUSE_FILTER_IGNORE
+			i.focus_mode = Control.FOCUS_NONE
+#		AI ASSISTED END
+
 		if follow_button_focus and i.has_focus():
 			selected_index = i.get_index()
 

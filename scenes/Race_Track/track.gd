@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var car = $"kart-oobi2" # Make sure this matches your car node's exact name!
+@onready var car = $"kart_1" # Make sure this matches your car node's exact name!
 
 func _on_finish_line_body_entered(body: Node3D) -> void:
 	# Walk up the parent tree if a wheel or body mesh triggered it first
