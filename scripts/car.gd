@@ -3,7 +3,7 @@ extends VehicleBody3D
 # OTHER ASSIST START  
 const MAX_STEER = 0.5 
 const ENGINE_POWER = 150
-const MAX_SPEED = 30.0 
+const MAX_SPEED = 50.0 
 var look_at
 
 # RESET STATE TRACKING VARIABLES
