@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://d0yumn8dduq62"]
 
-[ext_resource type="PackedScene" uid="uid://1tam15bp4ja4" path="res://scenes/tunnel_collision.tscn" id="1_lpqoi"]
+[ext_resource type="Script" uid="uid://bs8ap6qg775en" path="res://scenes/Race_Track/track.gd" id="1_iilmw"]
+[ext_resource type="PackedScene" uid="uid://1tam15bp4ja4" path="res://scenes/track_items/tunnel_collision.tscn" id="1_lpqoi"]
 [ext_resource type="Texture2D" uid="uid://bkepwk6ddenpc" path="res://asset/glb/track_citybits_texture.png" id="2_4cifb"]
 [ext_resource type="PackedScene" uid="uid://dmlww23f3r8v8" path="res://asset/kenney_racing-kit/Models/GLTF format/camera_exclusive.glb" id="3_hsldd"]
 [ext_resource type="PackedScene" uid="uid://dafe05n6svong" path="res://scenes/barrel.tscn" id="4_28bpc"]
@@ -1806,7 +1807,11 @@ sky_material = SubResource("ProceduralSkyMaterial_0lx0s")
 background_mode = 2
 sky = SubResource("Sky_iilmw")
 
+[sub_resource type="BoxShape3D" id="BoxShape3D_3ya5o"]
+size = Vector3(1, 1.3227539, 0.18798828)
+
 [node name="italy_manzo" type="Node3D" unique_id=686639044]
+script = ExtResource("1_iilmw")
 
 [node name="Lantai" type="StaticBody3D" parent="." unique_id=2050618073]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.01, 0)
@@ -2506,3 +2511,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.119251, 12.136579, 11.0767
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1516756538]
 environment = SubResource("Environment_0lx0s")
+
+[node name="Finish line" type="Area3D" parent="." unique_id=1010153800]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.085444, 0, -0.58292574)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Finish line" unique_id=469240615]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3509649, -0.6962785)
+shape = SubResource("BoxShape3D_3ya5o")
+
+[connection signal="body_entered" from="Finish line" to="." method="_on_finish_line_body_entered"]
