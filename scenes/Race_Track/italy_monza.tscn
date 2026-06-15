@@ -1,6 +1,6 @@
-[gd_scene format=4 uid="uid://d0yumn8dduq62"]
+[gd_scene format=4 uid="uid://bj20x3l3fy5wo"]
 
-[ext_resource type="Script" uid="uid://bs8ap6qg775en" path="res://scenes/Race_Track/track.gd" id="1_iilmw"]
+[ext_resource type="Script" path="res://scenes/Race_Track/track.gd" id="1_iilmw"]
 [ext_resource type="PackedScene" uid="uid://1tam15bp4ja4" path="res://scenes/track_items/tunnel_collision.tscn" id="1_lpqoi"]
 [ext_resource type="Texture2D" uid="uid://bkepwk6ddenpc" path="res://asset/glb/track_citybits_texture.png" id="2_4cifb"]
 [ext_resource type="PackedScene" uid="uid://dmlww23f3r8v8" path="res://asset/kenney_racing-kit/Models/GLTF format/camera_exclusive.glb" id="3_hsldd"]
