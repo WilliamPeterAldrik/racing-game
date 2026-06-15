@@ -12,5 +12,5 @@ func _ready() -> void:
 
 #HUMAN START
 func _on_italy_track_pressed() -> void:
-	get_tree().change_scene_to_file("res://scenes/Race_Track/italy_monza.tscn")
+	get_tree().change_scene_to_file("res://scenes/Race_Track/Italy_Monza/italy_monza.tscn")
 #HUMAN END
