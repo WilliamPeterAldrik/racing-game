@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://yxlci2a1ng8t" path="res://scripts/car.gd" id="1_qih2i"]
 [ext_resource type="Texture2D" uid="uid://dl1gs52ybkogb" path="res://asset/kenney_car-kit/Models/GLB format/Textures/colormap.png" id="1_vfvc6"]
-[ext_resource type="AudioStream" uid="uid://dx1a5lg7a5acl" path="res://On.wav" id="3_2pks0"]
-[ext_resource type="AudioStream" uid="uid://cj34ry0opw6ht" path="res://Off.wav" id="4_yerdr"]
+[ext_resource type="AudioStream" uid="uid://dx1a5lg7a5acl" path="res://asset/sfx/On.wav" id="3_2pks0"]
+[ext_resource type="AudioStream" uid="uid://cj34ry0opw6ht" path="res://asset/sfx/Off.wav" id="4_yerdr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_kd837"]
 resource_name = "colormap"
@@ -294,7 +294,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22816277, 0.019482195, 0.07
 top_level = true
 
 [node name="Camera3D" type="Camera3D" parent="camera_base" unique_id=680031039]
-transform = Transform3D(-1, 3.908059e-08, -1.4585073e-07, 0, 0.96592575, 0.25881904, 1.509958e-07, 0.25881904, -0.96592575, 0, 0.3, 0.5)
+transform = Transform3D(1, 0, 0, 0, 0.9659257, 0.258819, 0, -0.258819, 0.9659257, 0, 0.3, 0.5)
 current = true
 
 [node name="Center Mass" type="Node3D" parent="." unique_id=1722830020]

@@ -1,11 +1,11 @@
 extends VehicleBody3D
 
 # TIME TRIAL SIGNALS & VARIABLES
-signal time_updated(time_string: String) # Broadcasts the formatted string to your UI scene
-signal raw_time_updated(total_seconds: float) # Broadcasts the exact raw math decimal
+signal time_updated(time_string: String) 
+signal raw_time_updated(total_seconds: float) 
 
 var elapsed_time: float = 0.0
-var timer_active: bool = true # Set to false if you want the clock to wait for a countdown
+var timer_active: bool = true 
 
 # OTHER ASSIST START  
 const MAX_STEER = 0.5 
@@ -19,6 +19,9 @@ var wants_reset = false
 @onready var camera_pivot = $camera_base
 @onready var camera_3d = $camera_base/Camera3D
 
+# CAMERA STABILIZATION VARIABLES
+var fixed_camera_height: float = 0.0
+
 # AUDIO NODE REFERENCES
 @onready var engine_on = $EngineOn
 @onready var engine_off = $EngineOff
@@ -29,11 +32,14 @@ const MAX_PITCH = 2.5
 func _ready() -> void:
 	look_at = global_position
 	
+	# Capture the starting, ideal height of the camera pivot
+	if camera_pivot:
+		fixed_camera_height = camera_pivot.global_position.y
+	
 	if engine_on: engine_on.play()
 	if engine_off: engine_off.play()
 	
 func _process(delta: float) -> void:
-	# 1. INDEPENDENT TIMER CORE
 	if timer_active:
 		elapsed_time += delta
 		calculate_and_send_time()
@@ -64,16 +70,24 @@ func _physics_process(delta):
 		wants_reset = true 
 
 	# ==========================================
-	# CAMERA BEHAVIOR
+	# FIXED Y CAMERA BEHAVIOR (CODE OVERRIDE)
 	# ==========================================
-	camera_pivot.global_position = camera_pivot.global_position.lerp(global_position, delta * 20.0)
+	# 1. Clear out the camera pivot's local transform inheritance
+	camera_pivot.top_level = true
+	
+	# 2. Track where the camera wants to go horizontally (X and Z)
+	var target_position = global_position
+	
+	# 3. Lock the height strictly to the track baseline, ignoring the car's current physical Y
+	target_position.y = fixed_camera_height
+	
+	# 4. Lerp smoothly to the locked height position
+	camera_pivot.global_position = camera_pivot.global_position.lerp(target_position, delta * 20.0)
+	
+	# Keep standard follow rotations intact
 	camera_pivot.rotation.y = rotation.y + PI
 	camera_pivot.rotation.x = move_toward(camera_pivot.rotation.x, rotation.x, delta * 5.0)
 	camera_pivot.rotation.z = move_toward(camera_pivot.rotation.z, rotation.z, delta * 5.0)
-	
-	var static_look_at = global_position + transform.basis.z * 3.0 + Vector3.UP * 0.4
-	look_at = look_at.lerp(static_look_at, delta * 10.0)
-	camera_3d.look_at(look_at)
 	
 	# ==========================================
 	# ENGINE AUDIO
@@ -127,14 +141,11 @@ func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 # TIME CONVERSION AND SIGNAL EMISSION
 # ==========================================
 func calculate_and_send_time() -> void:
-	# 1. Break down elapsed time into racing units
 	var minutes: int = int(elapsed_time / 60.0)
 	var seconds: int = int(elapsed_time) % 60
 	var milliseconds: int = int((elapsed_time - int(elapsed_time)) * 1000.0)
 	
-	# 2. Format string (e.g., "01:24.005")
 	var time_string = "%02d:%02d.%03d" % [minutes, seconds, milliseconds]
 	
-	# 3. Shoot signals into the air for your UI scene to catch
 	time_updated.emit(time_string)
 	raw_time_updated.emit(elapsed_time)
