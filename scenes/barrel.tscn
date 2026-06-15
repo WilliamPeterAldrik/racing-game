@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://dafe05n6svong"]
 
 [ext_resource type="PackedScene" uid="uid://bnd5ofpgbs8ks" path="res://asset/barrel.glb" id="1_q36op"]
-[ext_resource type="Script" uid="uid://bimg2elk1slvf" path="res://scenes/barrel.gd" id="2_ptqd7"]
+[ext_resource type="Script" uid="uid://bimg2elk1slvf" path="res://scripts/barrel.gd" id="2_ptqd7"]
 
 [node name="barrel" unique_id=621525572 instance=ExtResource("1_q36op")]
 script = ExtResource("2_ptqd7")
