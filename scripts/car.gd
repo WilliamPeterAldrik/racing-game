@@ -136,7 +136,6 @@ func _physics_process(delta):
 	# 6. UNFLIP / RESET CAR BUTTON
 	if Input.is_action_just_pressed("reset_car") or Input.is_key_pressed(KEY_R):
 		wants_reset = true 
-		elapsed_time = 0.0
 		timer_active = true
 		
 	# ==========================================
