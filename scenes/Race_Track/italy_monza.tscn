@@ -2541,4 +2541,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11701441, 0.1934281, -0.121
 shape = SubResource("BoxShape3D_im5hp")
 debug_color = Color(0.99607843, 0, 0.17254902, 0.6392157)
 
+[node name="Marker3D" type="Marker3D" parent="." unique_id=1513585761]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.1024737, 0.3315742, -1.5378045)
+
 [connection signal="body_entered" from="Finish line" to="." method="_on_finish_line_body_entered"]

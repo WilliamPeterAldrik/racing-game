@@ -11,10 +11,18 @@ var timer_active: bool = true
 const MAX_STEER = 0.5 
 const ENGINE_POWER = 150
 const MAX_SPEED = 30.0 
+
+# COASTING & DRAG CONFIGURATION
+const ENGINE_BRAKING_FORCE = 2.0 # How fast the car slows down when you let go of gas
+const AIR_RESISTANCE = 0.5        # Subtle deceleration drag that increases at high speeds
+
 var look_at
 
 # RESET STATE TRACKING VARIABLES
 var wants_reset = false
+
+# EXPORT LINK FOR THE SPAWN POINT MARKER
+@export var spawn_point_marker: Marker3D
 
 @onready var camera_pivot = $camera_base
 @onready var camera_3d = $camera_base/Camera3D
@@ -32,7 +40,9 @@ const MAX_PITCH = 2.5
 func _ready() -> void:
 	look_at = global_position
 	
-	# Capture the starting, ideal height of the camera pivot
+	if spawn_point_marker:
+		global_transform = spawn_point_marker.global_transform
+	
 	if camera_pivot:
 		fixed_camera_height = camera_pivot.global_position.y
 	
@@ -45,49 +55,69 @@ func _process(delta: float) -> void:
 		calculate_and_send_time()
 
 func _physics_process(delta):
-	# 2. GET CURRENT SPEED
 	var speed = linear_velocity.length()
-	
-	# 3. SPEED-SENSITIVE STEERING
 	var speed_steer_modifier = clamp(1.0 - (speed / 80.0), 0.5, 1.0)
 	var current_max_steer = MAX_STEER * speed_steer_modifier
 	
 	steering = move_toward(steering, Input.get_axis("d", "a") * current_max_steer, delta * 3.5)
 	
-	# 4. ENGINE FORCE & MAX SPEED LIMITER
+	# INPUT READ
 	var throttle_input = Input.get_axis("s", "w")
 	
-	if speed >= MAX_SPEED and throttle_input > 0:
-		engine_force = 0.0
+	# ==========================================
+	# FIXED DRIVE / REVERSE / COASTING ENGINE
+	# ==========================================
+	if throttle_input > 0:
+		# 1. DRIVING FORWARD
+		brake = 0.0 
+		if speed >= MAX_SPEED:
+			engine_force = 0.0
+		else:
+			engine_force = throttle_input * ENGINE_POWER
+			
+	elif throttle_input < 0:
+		# 2. ACTIVE REVERSE / BACKWARDS
+		brake = 0.0 
+		# Give reverse ample power to reliably overcome tire grip friction
+		engine_force = throttle_input * ENGINE_POWER 
+		
 	else:
-		engine_force = throttle_input * ENGINE_POWER
-	
-	# 5. FAKE DOWNFORCE
-	apply_central_force(Vector3.DOWN * speed * 8.0)
-	
-	# 6. UNFLIP / RESET CAR BUTTON
+		# 3. PEDAL RELEASED (COASTING)
+		engine_force = 0.0
+		
+		if speed > 0.1:
+			# Apply automatic light resistance relative to current speed
+			brake = ENGINE_BRAKING_FORCE * (speed / MAX_SPEED)
+		else:
+			# Holding brake when fully stopped to prevent rolling away
+			brake = 5.0
+
+	# Apply ongoing dynamic aerodynamic drag force
+	apply_central_force(Vector3.DOWN * speed * 8.0) # Downforce
+	if speed > 1.0:
+		var drag_direction = -linear_velocity.normalized()
+		apply_central_force(drag_direction * speed * AIR_RESISTANCE)
+
+	# TRIGGER RESET CHECK
 	if Input.is_action_just_pressed("reset_car") or Input.is_key_pressed(KEY_R):
 		wants_reset = true 
-
+		elapsed_time = 0.0
+		timer_active = true
 	# ==========================================
-	# FIXED Y CAMERA BEHAVIOR (CODE OVERRIDE)
+	# FIXED Y CAMERA BEHAVIOR
 	# ==========================================
-	# 1. Clear out the camera pivot's local transform inheritance
 	camera_pivot.top_level = true
-	
-	# 2. Track where the camera wants to go horizontally (X and Z)
 	var target_position = global_position
-	
-	# 3. Lock the height strictly to the track baseline, ignoring the car's current physical Y
 	target_position.y = fixed_camera_height
-	
-	# 4. Lerp smoothly to the locked height position
 	camera_pivot.global_position = camera_pivot.global_position.lerp(target_position, delta * 20.0)
 	
-	# Keep standard follow rotations intact
 	camera_pivot.rotation.y = rotation.y + PI
 	camera_pivot.rotation.x = move_toward(camera_pivot.rotation.x, rotation.x, delta * 5.0)
 	camera_pivot.rotation.z = move_toward(camera_pivot.rotation.z, rotation.z, delta * 5.0)
+	
+	var static_look_at = global_position + transform.basis.z * 3.0 + Vector3.UP * 0.4
+	look_at = look_at.lerp(static_look_at, delta * 10.0)
+	camera_3d.look_at(look_at)
 	
 	# ==========================================
 	# ENGINE AUDIO
@@ -105,47 +135,47 @@ func _physics_process(delta):
 			engine_off.volume_db = move_toward(engine_off.volume_db, -45.0, delta * 25.0)
 		else:
 			engine_on.volume_db = move_toward(engine_on.volume_db, -45.0, delta * 15.0)
-			
 			if speed < 1.0:
 				engine_off.volume_db = move_toward(engine_off.volume_db, -22.0, delta * 15.0)
 			else:
 				engine_off.volume_db = move_toward(engine_off.volume_db, -12.0, delta * 15.0)
 
-# OTHER ASSIST END
-
+# ==========================================
+# SAFE JOLT-SPECIFIC RESET ENGINE
+# ==========================================
 func _integrate_forces(state: PhysicsDirectBodyState3D) -> void:
 	if not wants_reset:
 		return
 		
+	sleeping = false
+	engine_force = 0.0
+	brake = 0.0
+	steering = 0.0
+	
 	state.linear_velocity = Vector3.ZERO
 	state.angular_velocity = Vector3.ZERO
 	
-	var current_y_rotation = state.transform.basis.get_euler().y
-	var clean_basis = Basis.from_euler(Vector3(0, current_y_rotation, 0))
+	if spawn_point_marker:
+		state.transform = spawn_point_marker.global_transform
+	else:
+		var current_y_rotation = state.transform.basis.get_euler().y
+		var flat_basis = Basis.from_euler(Vector3(0, current_y_rotation, 0))
+		state.transform = Transform3D(flat_basis, state.transform.origin)
 	
-	var target_transform = Transform3D(clean_basis, state.transform.origin)
-	target_transform.origin.y += 0.3
-	
-	state.transform = target_transform
+	wants_reset = false
 	
 	if engine_on and engine_off:
 		engine_on.pitch_scale = MIN_PITCH
 		engine_off.pitch_scale = MIN_PITCH
 		engine_on.volume_db = -40.0
 		engine_off.volume_db = -10.0
-	
-	sleeping = false
-	wants_reset = false
 
-# ==========================================
-# TIME CONVERSION AND SIGNAL EMISSION
-# ==========================================
+# OTHER ASSIST END
+
 func calculate_and_send_time() -> void:
 	var minutes: int = int(elapsed_time / 60.0)
 	var seconds: int = int(elapsed_time) % 60
 	var milliseconds: int = int((elapsed_time - int(elapsed_time)) * 1000.0)
-	
 	var time_string = "%02d:%02d.%03d" % [minutes, seconds, milliseconds]
-	
 	time_updated.emit(time_string)
 	raw_time_updated.emit(elapsed_time)
