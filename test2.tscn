@@ -294,7 +294,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.22816277, 0.019482195, 0.07
 top_level = true
 
 [node name="Camera3D" type="Camera3D" parent="camera_base" unique_id=680031039]
-transform = Transform3D(-1, 3.908059e-08, -1.4585073e-07, 0, 0.96592575, 0.25881904, 1.509958e-07, 0.25881904, -0.96592575, 0, 0.3, 0.5)
+transform = Transform3D(1, 0, 0, 0, 0.9659257, 0.258819, 0, -0.258819, 0.9659257, 0, 0.3, 0.5)
 current = true
 
 [node name="Center Mass" type="Node3D" parent="." unique_id=1722830020]
