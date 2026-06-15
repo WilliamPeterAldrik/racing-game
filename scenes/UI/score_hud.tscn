@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://bikid3jiymlv0"]
+
+[ext_resource type="Script" uid="uid://damdifvoswnx7" path="res://scripts/score_ui.gd" id="1_kklb0"]
+[ext_resource type="FontFile" uid="uid://kv6jtfnhy5c2" path="res://asset/fonts/Modak/Modak-Regular.ttf" id="2_i8d28"]
+
+[node name="ScoreHUD" type="CanvasLayer" unique_id=313057301]
+script = ExtResource("1_kklb0")
+
+[node name="ScoreLabel" type="Label" parent="." unique_id=1732371184]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -137.0
+offset_right = 312.0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_i8d28")
+theme_override_font_sizes/font_size = 90
+text = "Score : 0"

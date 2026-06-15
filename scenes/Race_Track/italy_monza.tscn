@@ -11,7 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b2nvycnyeejxm" path="res://test2.tscn" id="8_0lx0s"]
 [ext_resource type="PackedScene" uid="uid://cjyw6027tyl3f" path="res://scenes/UI/pause_menu.tscn" id="9_iilmw"]
 [ext_resource type="PackedScene" uid="uid://nwitlddk5c40" path="res://scenes/UI/time_attack_hud.tscn" id="10_f5213"]
-[ext_resource type="Script" uid="uid://tds1341iv4n1" path="res://scripts/checkpoints.gd" id="12_r87dr"]
+[ext_resource type="PackedScene" uid="uid://bikid3jiymlv0" path="res://scenes/UI/score_hud.tscn" id="11_im5hp"]
+[ext_resource type="Script" uid="uid://tds1341iv4n1" path="res://scripts/lap_system.gd" id="12_r87dr"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r87dr"]
 size = Vector3(24.36349, 0.001, 41.03)
@@ -2527,6 +2528,8 @@ shape = SubResource("BoxShape3D_3ya5o")
 
 [node name="TimeAttackHUD" parent="." unique_id=313057301 instance=ExtResource("10_f5213")]
 checkpoints_node = NodePath("../Checkpoints")
+
+[node name="ScoreHUD" parent="." unique_id=1367258054 instance=ExtResource("11_im5hp")]
 
 [node name="PauseMenu" parent="." unique_id=1036098452 instance=ExtResource("9_iilmw")]
 

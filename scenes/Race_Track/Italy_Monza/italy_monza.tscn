@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://d0yumn8dduq62"]
+[gd_scene format=3 uid="uid://cx13a85b0gmyj"]
 
 [ext_resource type="PackedScene" uid="uid://nw2yotaqyt55" path="res://scenes/Race_Track/Italy_Monza/monza_track_only.tscn" id="1_mmmog"]
 [ext_resource type="Script" uid="uid://bs8ap6qg775en" path="res://scripts/track.gd" id="1_wemp7"]
@@ -25,7 +25,8 @@
 [ext_resource type="PackedScene" uid="uid://cvd74i15tgt3i" path="res://asset/kenney_racing-kit/Models/GLTF format/flagGreen.glb" id="22_kt6gg"]
 [ext_resource type="PackedScene" uid="uid://nwitlddk5c40" path="res://scenes/UI/time_attack_hud.tscn" id="24_qom7v"]
 [ext_resource type="PackedScene" uid="uid://cjyw6027tyl3f" path="res://scenes/UI/pause_menu.tscn" id="25_4xdas"]
-[ext_resource type="Script" uid="uid://tds1341iv4n1" path="res://scripts/checkpoints.gd" id="26_u4d0e"]
+[ext_resource type="Script" uid="uid://tds1341iv4n1" path="res://scripts/lap_system.gd" id="26_u4d0e"]
+[ext_resource type="PackedScene" uid="uid://bikid3jiymlv0" path="res://scenes/UI/score_hud.tscn" id="27_gv3t1"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_r87dr"]
 size = Vector3(24.36349, 0.001, 41.03)
@@ -599,17 +600,44 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3509649, -0.6962785)
 shape = SubResource("BoxShape3D_3ya5o")
 
 [node name="TimeAttackHUD" parent="." unique_id=313057301 instance=ExtResource("24_qom7v")]
-checkpoints_node = NodePath("../Checkpoints")
+checkpoints_node = NodePath("../checkpoints")
+
+[node name="ScoreHUD" parent="." unique_id=2013655132 node_paths=PackedStringArray("checkpoints") instance=ExtResource("27_gv3t1")]
+checkpoints = NodePath("../checkpoints")
 
 [node name="PauseMenu" parent="." unique_id=1036098452 instance=ExtResource("25_4xdas")]
 
-[node name="Checkpoints" type="Node3D" parent="." unique_id=2010557751]
+[node name="checkpoints" type="Node3D" parent="." unique_id=2010557751]
 script = ExtResource("26_u4d0e")
 
-[node name="Area3D" type="Area3D" parent="Checkpoints" unique_id=965219419]
+[node name="Area3D" type="Area3D" parent="checkpoints" unique_id=965219419]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9648805, 0, -2.085959)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Checkpoints/Area3D" unique_id=1513788971]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="checkpoints/Area3D" unique_id=1513788971]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11701441, 0.1934281, -0.12179184)
+shape = SubResource("BoxShape3D_im5hp")
+debug_color = Color(0.99607843, 0, 0.17254902, 0.6392157)
+
+[node name="Area3D2" type="Area3D" parent="checkpoints" unique_id=1601369486]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.9648805, 0, -11.215098)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="checkpoints/Area3D2" unique_id=1442448693]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11701441, 0.1934281, -0.12179184)
+shape = SubResource("BoxShape3D_im5hp")
+debug_color = Color(0.99607843, 0, 0.17254902, 0.6392157)
+
+[node name="Area3D3" type="Area3D" parent="checkpoints" unique_id=286556774]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.839323, 0, -23.2151)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="checkpoints/Area3D3" unique_id=635292573]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11701441, 0.1934281, -0.12179184)
+shape = SubResource("BoxShape3D_im5hp")
+debug_color = Color(0.99607843, 0, 0.17254902, 0.6392157)
+
+[node name="Area3D4" type="Area3D" parent="checkpoints" unique_id=573975115]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.839323, 0, -1.2150993)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="checkpoints/Area3D4" unique_id=439846087]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.11701441, 0.1934281, -0.12179184)
 shape = SubResource("BoxShape3D_im5hp")
 debug_color = Color(0.99607843, 0, 0.17254902, 0.6392157)
